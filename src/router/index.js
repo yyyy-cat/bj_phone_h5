@@ -30,24 +30,30 @@ export default new Router({
 			component: () =>
 			  import( "@/pages/Add")
 		},
+		{
+			path: "/dbddbrowser",
+			name: "Dbddbrowser",
+			component: () =>
+			  import( "@/pages/DbddBrowser")
+		},
 		// {
 		// 	path: "/",
 		// 	name: "dbDetail",
 		// 	component: () =>
 		// 	  import( "@/pages/DbDetail")
 		// },
-		// {
-		// 	path: "/",
-		// 	name: "Info",
-		// 	component: () =>
-		// 	  import( "@/pages/Info")
-		// },
-		// {
-		// 	path: "/",
-		// 	name: "Address",
-		// 	component: () =>
-		// 	  import( "@/pages/Address")
-		// },
+		 {
+			path: "/info",
+			name: "Info",
+			component: () =>
+			  import( "@/pages/Info")
+		},
+		{
+			path: "/address",
+			name: "Address",
+			component: () =>
+			  import( "@/pages/Address")
+		},
 		// {
 		// 	path: "/",
 		// 	name: "AddressAdd",

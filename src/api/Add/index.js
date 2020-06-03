@@ -9,6 +9,16 @@ export const uploadPic = function(params) {
     })
 }
 
+export const addCustom = function(params) {
+
+    return Request.post({
+        url: '/api/addCustom',
+        body: params,
+        service: 'gy'
+    })
+}
+
+
 export const getPicuuid = function(params) {
 
     return Request.post({

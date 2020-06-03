@@ -8,7 +8,7 @@
 				</div>
 				<div class="carame">
 					<van-uploader multiple ref="checked" :after-read='onRead' :accept="'image/*'">
-						<img src="@/assets/images/login-img.png" alt="">
+						<img src="@/assets/images/icon_add_camera.png" alt="">
 						<!-- <div class="phone" icon="photo">
 							<span>新增图片</span>
 						</div> -->
@@ -23,58 +23,56 @@
 					其他信息
 				</div>
 				<div class="row">
-					<label for="" class="name">展会信息</label>
-					<input type="text" class="text">
+					<label for="" class="name">展会名称</label>
+					<input type="text" class="text" v-model="customSource">
 				</div>
 				<div class="row">
 					<label for="" class="name">客户名称</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="companyName">
 				</div>
 				<div class="row">
 					<label for="" class="name">客户性质</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="customNature">
 				</div>
 				<div class="row">
-					<label for="" class="name">客户营销品牌</label>
-					<input type="text" class="text">
+					<label for="" class="name hx">客户营销品牌</label>
+					<input type="text" class="text" v-model="marketingBrand">
 				</div>
 				<div class="row">
 					<label for="" class="name">国家地区</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="area">
 				</div>
-				<div class="row two">
-					<div class="people">
+				<div class="row ">
+					<label for="" class="name hx">客户联系人</label>
+					<input type="text" class="text" v-model="linkman">
+					<!-- <div class="people">
 					<div class="name">客户联系人</div>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="linkman"> -->
 				</div>
-				<div class="phone">
+				<!-- <div class="phone">
 					<div class="name">职位</div>
 					<input type="text" class="text">
 				</div>
-				</div>
+				</div> -->
 				<div class="row">
 					<label for="" class="name">联系人职务</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="position">
 				</div>
 				<div class="row">
 					<label for="" class="name">联系人电话</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="phone">
 				</div>
 				<div class="row">
 					<label for="" class="name">联系邮箱</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="email">
 				</div>
 				<div class="row">
-					<label for="" class="name">客户</label>
-					<input type="text" class="text">
-				</div>
-				<div class="row">
-					<label for="" class="name">地址</label>
-					<input type="text" class="text">
+				<label for="" class="name">客户地址</label>
+					<input type="text" class="text" v-model="address">
 				</div>
 				<div class="row">
 					<label for="" class="name">备注</label>
-					<input type="text" class="text">
+					<input type="text" class="text" v-model="remark">
 				</div>
 			</div>
 			<div class="row">
@@ -86,7 +84,7 @@
 </template>
 
 <script>
-import {uploadPic,getPicuuid} from '@/api/Add/index'
+import {uploadPic, getPicuuid, addCustom} from '@/api/Add/index'
 import Nav from '@/components/common/Nav'
 import Remarks from '@/components/common/Remarks'
 	export default {
@@ -98,7 +96,21 @@ import Remarks from '@/components/common/Remarks'
 		data() {
 			return{
 				imgData: [],
-				customID: ''
+				customID: '',
+				customSource: '',
+				customNature: '',
+				marketingBrand: '',
+				linkman: '',
+				position: '',
+				area: '',
+				phone: '',
+				address: '',
+				remark: '',
+				companyName: '',
+				  fileList: [
+					{ url: '@/assets/images/login-img.png' },
+					{ url: 'https://cloud-image', isImage: true },
+				],
 			}
 		},
 		created() {
@@ -111,11 +123,10 @@ import Remarks from '@/components/common/Remarks'
 				console.log('1234')
 			},
 			onRead(e) {
-				let params = new URLSearchParams();
 				let files = new FormData()
       			files.append('file', e.file)
-				params.append("customID", this.customID)
-				params.append("kind", '1')
+				files.append("customID", this.customID)
+				files.append("kind", '1')
 				uploadPic(
 					files
 				).then((res) => {
@@ -218,6 +229,14 @@ html,body{
 					height: .7rem;
 					font-size: .22rem;
 				}
+			}
+			.hx{
+				position: relative;
+			}
+			.hx::after{
+				position: absolute;
+				color: red;
+				content: "*";
 			}
 		}
 	}
