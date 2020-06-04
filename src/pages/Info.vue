@@ -1,6 +1,6 @@
 <template>
 	<div class="info">
-		<Nav title='基本信息' :border="false" :backPage="toback"/>
+		<Nav title='基本信息' :border="false" :backPage="toback" rightText='保存'/>
 		<section>
 			<div class="main">
 				<div class="top">
@@ -107,6 +107,7 @@ import Remarks from '@/components/common/Remarks'
 				address: '',
 				remark: '',
 				companyName: '',
+				email: '',
 				  fileList: [
 					{ url: '@/assets/images/login-img.png' },
 					{ url: 'https://cloud-image', isImage: true },
@@ -120,7 +121,28 @@ import Remarks from '@/components/common/Remarks'
 		},
 		methods:{
 			toback() {
-				console.log('1234')
+				// !this.marketingBrand && !this.linkman
+				if(this.marketingBrand =='' && this.linkman == '') {
+					this.$toast('请填写客户营销品牌，客户联系人');
+					return
+				}
+				let files = new FormData()
+      			files.append('customSource', this.customSource)
+				files.append("customNature", this.customNature)
+				files.append("marketingBrand", this.marketingBrand)
+				files.append("linkman", this.linkman)
+				files.append("position", this.position)
+				files.append("area", this.area)
+				files.append("phone", this.phone)
+				files.append("address", this.address)
+				files.append("remark", this.remark)
+				files.append("companyName", this.companyName)
+				files.append("email", this.email)
+				addCustom(files).then((res) => {
+					if(res.data.data == true){
+						this.$router.go(-1);
+					}
+				})
 			},
 			onRead(e) {
 				let files = new FormData()
@@ -143,6 +165,9 @@ html,body{
 </style>
 <style scoped lang='less'>
 @import '../styles/common.less';
+/deep/.van-toast{
+	height: 1rem!important;
+}
 .info{
 	padding-bottom: .8rem;
 	background: @bg_h;

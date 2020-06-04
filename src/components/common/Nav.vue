@@ -6,6 +6,7 @@
         :right-text="rightText"
         left-arrow
         @click-right='back'
+        @click-left='backLeftname'
         >
          <template #right v-if="jsq">
             <img src="@/assets/images/add/icon_counter.png" alt="" class="img">
@@ -43,6 +44,9 @@ export default {
     methods: {
         back() {
             this.$props.backPage();
+        },
+        backLeftname() {
+            this.$router.go(-1)
         }
     }
 }

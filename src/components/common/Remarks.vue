@@ -19,7 +19,7 @@
                 <div class="qk">清空</div>
                 <div class="data right-data">名片资料</div>
                 <div class="data">
-                    <span>123</span>
+                    <span class="iconfont icon-xiangji"></span>
                     识别
                 </div>
             </div>

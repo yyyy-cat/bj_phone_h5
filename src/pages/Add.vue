@@ -2,7 +2,7 @@
 	<div class="add">
 		<Nav title="新增展会记录" :showLeft='true'/>
 		<section>
-			<div class="info distance" v-for="(item, idx) in addInfo" :key="idx">
+			<div class="info distance" v-for="(item, idx) in addInfo" :key="idx" @click="toInfoDetail(item.route)">
 				<div class="left">
 					<img :src="item.icon" alt="">
 				</div>
@@ -31,9 +31,13 @@ import blInfo from '@/bl/info'
 				addInfo: []
 			}
 		},
+		methods: {
+			toInfoDetail(route) {
+				this.$router.push(route)
+			}
+		},
 		created() {
 			this.addInfo = blInfo.ADD
-			console.log(blInfo)
 		}
 	}
 </script>
