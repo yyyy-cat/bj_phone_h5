@@ -36,12 +36,12 @@ export default new Router({
 			component: () =>
 			  import( "@/pages/DbddBrowser")
 		},
-		// {
-		// 	path: "/",
-		// 	name: "dbDetail",
-		// 	component: () =>
-		// 	  import( "@/pages/DbDetail")
-		// },
+		{
+			path: "/dbdetail",
+			name: "dbDetail",
+			component: () =>
+			  import( "@/pages/DbDetail")
+		},
 		 {
 			path: "/info",
 			name: "Info",
@@ -54,12 +54,12 @@ export default new Router({
 			component: () =>
 			  import( "@/pages/Address")
 		},
-		// {
-		// 	path: "/",
-		// 	name: "AddressAdd",
-		// 	component: () =>
-		// 	  import( "@/pages/AddressAdd")
-		// },
+		{
+			path: "/AddressAdd",
+			name: "AddressAdd",
+			component: () =>
+			  import( "@/pages/AddressAdd")
+		},
 		// {
 		// 	path: "/",
 		// 	name: "Add",
