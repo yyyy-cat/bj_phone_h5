@@ -1,6 +1,6 @@
 <template>
 	<div class="address">
-		<Nav title='地址管理' :border="false" :rightText='newAddress' :backPage="toback"/>
+		<Nav title='地址管理' :border="false" :rightText='newAddress' :backPage="toAddAddress"/>
 		<section :class="addressList.length == 0 ? 'w' : ''">
 			<div class="null" v-if="addressList.length == 0">
 				<img src="@/assets/images/add/nall.png" alt="" class="img">
@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="row b" v-else >
-				<div class="list" v-for='(item, idx) in addressList' :key='idx'>
+			<div class="list" v-for='(item, idx) in addressList' :key='idx'>
 				<div class="top">{{item.top}}</div>
 					<div class="bottom">
 						<div class="left">
@@ -20,7 +20,7 @@
 						<div class="address">{{item.address}}</div>
 					</div>
 
-				<div class="right">编辑</div>
+				<div class="right" @click="bj(item)">编辑</div>
 				</div>
 				</div>
 			</div>
@@ -49,8 +49,14 @@ import {getAllAddress} from '@/api/Add'
 			this.getAllAddress();
 		},
 		methods: {
-			toback() {
-
+			bj(item) {
+				Global.set('item', item)
+				this.$router.push({
+					name: 'AddressAdd',
+					query: {
+						bj: true
+					}
+				})
 			},
 			toAddAddress() {
 				this.$router.push('/AddressAdd')

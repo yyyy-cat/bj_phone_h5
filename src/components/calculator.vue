@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="theme-one" ref="whole">
+    <div  class="theme-one" ref="whole">
     <section class="calc-display">
       <div>{{symble}}</div>
       <div class="content">
@@ -260,14 +260,9 @@ export default {
 </script>
 
 <style lang="less" scope>
-  body,
-  html {
-    height: 100%;
-  }
-
   .theme-one {
     position: fixed;
-    top: 0;
+    top: 20%;
     bottom: 0;
     right: 0;
     left: 0;

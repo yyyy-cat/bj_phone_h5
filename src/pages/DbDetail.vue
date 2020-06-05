@@ -1,7 +1,10 @@
 <template>
 	<div class="dbDetail">
-		<!-- <Calculator/> -->
-		<Nav title="调版详情" :jsq='true'/>
+		<van-popup v-model="showCalculator" round position="bottom" :style="{ height: '70%' }" >
+			<Calculator/>
+		</van-popup>
+		
+		<Nav title="调版详情" :jsq='true' :backPage="toback"/>
 		<section class="search">
 			<van-search
 				shape="round"
@@ -16,11 +19,11 @@
 			</van-search>
 		</section>
 
-		<section class="detail">
-			<div class="img-main">
+		<section class="detail ">
+			<!-- <div class="img-main">
 				<img src="@/assets/images/add/nall.png" alt="">
-			</div>
-
+			</div> -->
+			<dbDetailList></dbDetailList>
 			<van-popup
 				v-model="show"
 				round
@@ -70,12 +73,15 @@
 				</footer>
 			</van-popup>
 		</section>
+			<jbAddress/>
 	</div>
 </template>
 
 <script>
 	import Nav from '../components/common/Nav' 
 	import Calculator from '../components/calculator' 
+	import dbDetailList from '@/components/dbDetailList'
+	import jbAddress from '@/components/common/jbAddress'
 
 	import Swiper from 'swiper';
 
@@ -83,12 +89,15 @@
 		name: 'dbDetail',
 		components: {
 			Calculator,
-			Nav
+			Nav,
+			dbDetailList,
+			jbAddress
 		},
 		data() {
 			return{
-				show: true,
-				swiper: null
+				show: false,
+				swiper: null,
+				showCalculator: false
 			}
 		},
 		mounted() {
@@ -98,6 +107,10 @@
 		 })
 		},
 		methods: {
+			toback() {
+				this.showCalculator = true
+				console.log('换起来计算器吧')
+			},
 			showBottom() {
 				this.show = true
 			}
@@ -151,10 +164,14 @@ html,body{
 		}
 	}
 
+	.w{
+		background: #ffffff;
+	}
+	
 	.detail{
 		margin: 0 .16rem;
 		flex: 1;
-		background: #ffffff;
+		
 
 		.img-main{
 			padding-top: 2.06rem;

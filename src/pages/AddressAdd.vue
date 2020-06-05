@@ -47,7 +47,7 @@
 				<van-switch v-model="isDefault" />
 			</div>
 			<div class="delete">
-				<van-button round>删除地址</van-button>
+				<van-button round @click="deleteAddress">删除地址</van-button>
 			</div>
 		</section>
 		
@@ -57,9 +57,10 @@
 <script>
 	import Nav from '@/components/common/Nav'
 	import Globle from '@/utils/global'
-	import {addAddress} from '@/api/Add'
+	import {addAddress, updateAddress, deleteAddress} from '@/api/Add'
 	import area from '@/bl/area'
 	import Remarks from '@/components/common/Remarks'
+	
 
 	export default {
 		name: 'AddressAdd',
@@ -77,15 +78,25 @@
 				emails: '',
 				address: '',
 				cityData: {},
-				isDefault: false
+				isDefault: false,
+				isrevise: false
 			}
 		},
 		created() {
+			let item = Globle.get('item');
 			this.cityData = area;
 			this.customID = Globle.get('customID')
+			this.isrevise = this.$route.query.bj
+			if(this.isrevise){
+				this.contact = item.contact;
+				this.emails = item.emails;
+				this.receiver = item.receiver
+				this.isDefault = item.isDefault == '1' ? true : false
+			}
 		},
 		methods:{
 			toback() {
+
 				let isDefault = 0;
 				if(this.isDefault){
 					isDefault = 1
@@ -93,14 +104,31 @@
 					isDefault = 0
 				}
 				let params = new URLSearchParams();
-				params.append("customID", this.customID)
+				if(this.isrevise){
+					params.append("guid", this.customID)
+				}else{
+					params.append("customID", this.customID)
+				}
 				params.append("receiver", this.receiver)
 				params.append("emails", this.emails)
 				params.append("contact", this.contact)
 				params.append("isDefault", isDefault)
 				params.append("address", this.cityName + this.address)
-
-				addAddress(params).then((res)=>{
+				if(this.isrevise) {
+					updateAddress(params).then((res) => {
+						this.$router.go(-1)
+					})
+				}else{
+					addAddress(params).then((res)=>{
+						this.$router.go(-1)
+					})
+				}
+				
+			},
+			deleteAddress() {
+				let params = new URLSearchParams();
+				params.append("guid", this.customID)
+				deleteAddress(params).then((res)=>{
 					this.$router.go(-1)
 				})
 			},

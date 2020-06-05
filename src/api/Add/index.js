@@ -45,4 +45,19 @@ export const getAllAddress = function(params) {
         service: 'gy'
     })
 }
+export const updateAddress = function(params) {
 
+    return Request.post({
+        url: '/api/updateAddress',
+        body: params,
+        service: 'gy'
+    })
+}
+export const deleteAddress = function(params) {
+
+    return Request.post({
+        url: '/api/deleteAddress',
+        body: params,
+        service: 'gy'
+    })
+}
