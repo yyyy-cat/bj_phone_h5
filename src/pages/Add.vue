@@ -9,7 +9,7 @@
 				<div class="right">
 					<div class="text">{{item.name}}</div>
 					<div class="name">
-						<span class="ws">去完善</span>
+						<span class="ws">去完善11111</span>
 						<span class="iconfont icon-arrowright"></span>
 					</div>
 				</div>
