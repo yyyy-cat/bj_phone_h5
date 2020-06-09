@@ -33,6 +33,7 @@ import blInfo from '@/bl/info'
 		},
 		methods: {
 			toInfoDetail(route) {
+				console.log(route)
 				this.$router.push(route)
 			}
 		},
@@ -53,7 +54,8 @@ html,body{
 	background: @bg_h;
 	
 	.distance{
-		margin-bottom: .12rem;
+		// margin-bottom: .12rem;
+		margin-top: .12rem;
 	}
 
 	.b{
