@@ -10,31 +10,31 @@ export default new Router({
 			path: "/login",
 			name: "Login",
 			component: () =>
-			  import( "@/pages/Login")
+				import("@/pages/Login")
 		},
 		{
 			path: "/",
 			name: "Index",
 			component: () =>
-			  import( "@/pages/index")
+				import("@/pages/index")
 		},
 		{
 			path: "/eRecord",
 			name: "ERecord",
 			component: () =>
-			  import( "@/pages/ERecord")
+				import("@/pages/ERecord")
 		},
 		{
 			path: "/add",
 			name: "Add",
 			component: () =>
-			  import( "@/pages/Add")
+				import("@/pages/Add")
 		},
 		{
 			path: "/dbddbrowser",
 			name: "Dbddbrowser",
 			component: () =>
-			  import( "@/pages/DbddBrowser")
+				import("@/pages/DbddBrowser")
 		},
 		// {
 		// 	path: "/",
@@ -42,17 +42,17 @@ export default new Router({
 		// 	component: () =>
 		// 	  import( "@/pages/DbDetail")
 		// },
-		 {
+		{
 			path: "/info",
 			name: "Info",
 			component: () =>
-			  import( "@/pages/Info")
+				import("@/pages/Info")
 		},
 		{
 			path: "/address",
 			name: "Address",
 			component: () =>
-			  import( "@/pages/Address")
+				import("@/pages/Address")
 		},
 		// {
 		// 	path: "/",
@@ -66,8 +66,8 @@ export default new Router({
 		// 	component: () =>
 		// 	  import( "@/pages/Add")
 		// },
-		
-		
+
+
 		// {
 		// 	path: "/",
 		// 	name: "ForgetPassword",
