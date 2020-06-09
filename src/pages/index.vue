@@ -47,4 +47,9 @@
 	color: #333333;
 	font-size: .26rem;
 }
+.van-sidebar-item--select::before{
+	width: .06rem;
+    height: .26rem;
+    background-color: #0098FF;
+}
 </style>

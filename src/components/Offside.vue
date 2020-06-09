@@ -8,10 +8,10 @@
           </div>
           
           <div class="main">
-              <div class="item" v-for="(data, index) in item.content" :key="index" @click="toDetail">
+              <router-link class="item" v-for="(data, index) in item.content" :key="index" :to="{path:data.route}" @click="toDetail">
                   <img :src="data.icon" alt="">
                   <span>{{data.name}}</span>
-              </div>
+              </router-link>
           </div>
       </section>
     </div>
@@ -30,11 +30,11 @@ export default {
     },
     created() {
         this.list = offsideData.SELECT_INDEX
-        console.log(this.list)
+        // console.log(this.list)
     },
     methods: {
       toDetail() {
-          this.$router.push('/eRecord')
+        //   this.$router.push('/eRecord')
       }
     }
 }
@@ -67,6 +67,7 @@ export default {
                 .flex-column;
                 width: 1.48rem;
                 height: 1.48rem;
+                color: #333333;
                 justify-content: center;
                 align-items: center;
                 img{
