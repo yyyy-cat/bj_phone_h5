@@ -12,7 +12,7 @@
             <span>待提交</span>
             <span>待审批</span>
         </div>
-        <div class="content" v-for="(data, index) in 5" :key="index">
+        <div class="content" v-for="(data, index) in 2" :key="index">
             <div class="top">
                 <span>Inditex_Oysho</span>
                 <span class="iconfont icon-lajitong ljt"></span>

@@ -1,6 +1,6 @@
 <template>
 	<div class="address">
-		<Nav title='地址管理' :border="false"/>
+		<Nav title='地址管理' :border="false" rightText='地址管理'/>
 		<section :class="addressList.length == 0 ? 'w' : ''">
 			<div class="null" v-if="addressList.length == 0">
 				<img src="@/assets/images/add/nall.png" alt="" class="img">
