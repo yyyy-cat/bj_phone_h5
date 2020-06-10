@@ -164,7 +164,7 @@ html,body{
 }
 </style>
 <style scoped lang='less'>
-@import '../styles/common.less';
+@import '../../styles/common.less';
 /deep/.van-toast{
 	height: 1rem!important;
 }

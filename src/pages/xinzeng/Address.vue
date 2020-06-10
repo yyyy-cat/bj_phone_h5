@@ -84,7 +84,7 @@ html,body{
 }
 </style>
 <style scoped lang='less'>
-@import '../styles/common.less';
+@import '../../styles/common.less';
 .address{
 	height: 100%;
 	background: @bg_h;

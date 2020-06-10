@@ -78,8 +78,8 @@
 </template>
 
 <script>
-	import Nav from '../components/common/Nav' 
-	import Calculator from '../components/calculator' 
+	import Nav from '@/components/common/Nav' 
+	import Calculator from '@/components/calculator' 
 	import dbDetailList from '@/components/dbDetailList'
 	import jbAddress from '@/components/common/jbAddress'
 
@@ -125,7 +125,7 @@ html,body{
 </style>
 
 <style scoped lang='less'>
-@import '../styles/common.less';
+@import '../../styles/common.less';
  .swiper-container {
       width: 100%;
 	  height: 100%;
@@ -200,7 +200,7 @@ html,body{
 			width: 2.4rem;
 			height: 2.4rem;
 			// background: #E9EDF4;
-			background: url(../assets/images/login-img.png) no-repeat;
+			background: url(../../assets/images/login-img.png) no-repeat;
 			background-size: 100% 100%;
 			position: relative;
 

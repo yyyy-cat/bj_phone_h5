@@ -22,43 +22,43 @@ export default new Router({
 			path: "/eRecord",
 			name: "ERecord",
 			component: () =>
-			  import( "@/pages/ERecord")
+			  import( "@/pages/zhanhuijilv/ERecord")
 		},
 		{
 			path: "/add",
 			name: "Add",
 			component: () =>
-			  import( "@/pages/Add")
+			  import( "@/pages/xinzeng/Add")
 		},
 		{
 			path: "/dbddbrowser",
 			name: "Dbddbrowser",
 			component: () =>
-			  import( "@/pages/DbddBrowser")
+			  import( "@/pages/zhanhuijilv/DbddBrowser")
 		},
 		{
 			path: "/dbdetail",
 			name: "dbDetail",
 			component: () =>
-			  import( "@/pages/DbDetail")
+			  import( "@/pages/xinzeng/DbDetail")
 		},
 		 {
 			path: "/info",
 			name: "Info",
 			component: () =>
-			  import( "@/pages/Info")
+			  import( "@/pages/xinzeng/Info")
 		},
 		{
 			path: "/address",
 			name: "Address",
 			component: () =>
-			  import( "@/pages/Address")
+			  import( "@/pages/xinzeng/Address")
 		},
 		{
 			path: "/AddressAdd",
 			name: "AddressAdd",
 			component: () =>
-			  import( "@/pages/AddressAdd")
+			  import( "@/pages/xinzeng/AddressAdd")
 		},
 		// {
 		// 	path: "/",

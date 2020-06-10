@@ -73,7 +73,7 @@ html, body{
 </style>
 
 <style lang="less" scoped>
-@import '../styles/common.less';
+@import '../../styles/common.less';
 
  .swiper-container {
       width: 6rem;
@@ -175,7 +175,7 @@ html, body{
                     margin-top: -.4rem;
                     width: 1.2rem;
                     height: 1.48rem;
-                    background: url('../assets/images/shadow.png') no-repeat;
+                    background: url('../../assets/images/shadow.png') no-repeat;
                     background-size: 100% 100%;
                     text-align: center;
                     .gb{
