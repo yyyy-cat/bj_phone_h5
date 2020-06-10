@@ -80,5 +80,11 @@ export default new Router({
 			component: () =>
 			  import( "@/pages/bfjl")
 		},
+		{
+			path: "/cpxx",
+			name: "cpxx",
+			component: () =>
+			  import( "@/pages/product/cpxx")
+		},
 	]
 })
