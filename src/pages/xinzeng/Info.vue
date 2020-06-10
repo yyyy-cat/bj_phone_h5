@@ -156,9 +156,9 @@ body {
 }
 </style>
 <style scoped lang='less'>
-@import "../styles/common.less";
-/deep/.van-toast {
-  height: 1rem !important;
+@import '../../styles/common.less';
+/deep/.van-toast{
+	height: 1rem!important;
 }
 .info {
   padding-bottom: 0.8rem;

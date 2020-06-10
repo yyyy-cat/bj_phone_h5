@@ -2,7 +2,7 @@ const ADD = [
     {
         name: '调版详情',
         icon: require('../assets/images/add/icon_add_db.png'),
-        route: '/ERecord'
+        route: '/dbdetail'
     },
     {
         name: '基本信息',

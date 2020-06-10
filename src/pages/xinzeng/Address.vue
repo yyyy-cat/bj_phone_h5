@@ -1,25 +1,27 @@
 <template>
 	<div class="address">
-		<Nav title='地址管理' :border="false"/>
+		<Nav title='地址管理' :border="false" :rightText='newAddress' :backPage="toAddAddress"/>
 		<section :class="addressList.length == 0 ? 'w' : ''">
 			<div class="null" v-if="addressList.length == 0">
 				<img src="@/assets/images/add/nall.png" alt="" class="img">
 				<div class="name">
 					<span class="as">这里什么都没有，快去</span>
-					<span class="focus">添加新地址</span>
+					<span class="focus" @click="toAddAddress">添加新地址</span>
 				</div>
 			</div>
 
-			<div class="row" v-else>
-				<div class="top"></div>
-				<div class="bottom">
-					<div class="left">
-					<span class="name">Candy</span>
-					<span class="email">16666666666;16666666666@12222222</span>
-					<div class="address">广州省 广州市 白云区黑土街道犄角旮旯办事处 1234号负一楼仓库</div>
-				</div>
+			<div class="row b" v-else >
+			<div class="list" v-for='(item, idx) in addressList' :key='idx'>
+				<div class="top">{{item.top}}</div>
+					<div class="bottom">
+						<div class="left">
+						<div class="c"><span class="name">{{item.receiver}}</span>
+						<span class="email">{{item.emails}}</span></div>
+						<div class="address">{{item.address}}</div>
+					</div>
 
-				<div class="right">编辑</div>
+				<div class="right" @click="bj(item)">编辑</div>
+				</div>
 				</div>
 			</div>
 		</section>
@@ -39,22 +41,38 @@ import {getAllAddress} from '@/api/Add'
 		},
 		data() {
 			return{
-				addressList: []
+				addressList: [],
+				newAddress: ''
 			}
 		},
 		mounted() {
 			this.getAllAddress();
 		},
 		methods: {
-			
+			bj(item) {
+				Global.set('item', item)
+				this.$router.push({
+					name: 'AddressAdd',
+					query: {
+						bj: true
+					}
+				})
+			},
+			toAddAddress() {
+				this.$router.push('/AddressAdd')
+			},
 			getAllAddress() {
-
 				let customID = Global.get('customID');
 				 let params = new URLSearchParams();
-				 params.append("customID", customID)
+				 params.append("guid", customID)
 				getAllAddress(params).then((res)=>{
-					this.addressList = res.data.data
-					console.log(this.addressList)
+					let arr = []
+					res.data.data.forEach((item,idx) => {
+						item.top = item.receiver.slice(0,1)
+						arr.push(item)
+					});
+					this.addressList = arr
+					this.newAddress = '添加新地址'
 				})
 			}
 		}
@@ -66,7 +84,7 @@ html,body{
 }
 </style>
 <style scoped lang='less'>
-@import '../styles/common.less';
+@import '../../styles/common.less';
 .address{
 	height: 100%;
 	background: @bg_h;
@@ -74,25 +92,41 @@ html,body{
 	.w{
 		background: #ffffff;
 	}
+	.b{
+		background: #ffffff;
+	}
 	section{
 		
 		height: 94%;
 		.row{
-			padding: 0 .32rem;
-			.flex-row;
-			align-items: center;
-			height: 1.6rem;
+			.flex-column;
+			.list{
+				padding: 0 .32rem;
+				.flex-row;
+				align-items: center;
+				height: 1.6rem;
+			}
 			.top{
 				width:.6rem;
 				height:.6rem;
 				background: #0098FF;
 				border-radius: 50%;
 				margin-right: .3rem;
+				color: #ffffff;
+				text-align: center;
+				font-size: .26rem;
+				line-height: .6rem
 			}
 			.bottom{
 				.flex-row;
 				padding-bottom: .32rem;
 				border-bottom: 1px solid #E9EDF4;
+				.left{
+					width: 5.16rem
+				}
+				.c{
+					.flex-row;
+				}
 				.name{
 					font-size: .26rem;
 					color: #333333;
@@ -100,8 +134,12 @@ html,body{
 				}
 
 				.email{
+					padding-left: .62rem;
+					display: block;
+					width: 4rem;
 					font-size: .22rem;
 					color: #999999;
+					.textOneTop;
 				}
 
 				.address{

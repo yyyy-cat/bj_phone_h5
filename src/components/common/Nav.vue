@@ -55,9 +55,15 @@ export default {
 <style lang="less" scoped>
 
 .nav{
+    position: relative;
+    height: .88rem;
+    border:1px solid rgba(233, 237, 244, 1);
+box-shadow:0px 0px 6px 0px rgba(50,50,50,0.11);
     .van-nav-bar{
 		height: .88rem;
-		background: #ffffff;
+        background: #ffffff;
+        position: fixed;
+        width: 100%;
 	}
 }
 
