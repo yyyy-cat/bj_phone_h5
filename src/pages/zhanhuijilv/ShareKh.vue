@@ -1,78 +1,48 @@
 <template>
 	<div class="browser">
-		<Nav title="新增展会记录" :showLeft='true'/>
+		<Nav title="分享" :showLeft='true'/>
 		<section>
 			<div class="main-list">
-			<van-collapse v-model="activeNames">
-				<van-collapse-item title="基本信息" name="1" :icon="require('@/assets/images/add/icon_add_basic.png')">
-				<header>
-					<span class="title">名片资料</span>
-				</header>
-				<div class="main">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-						<div class="swiper-slide row" v-for="(item,index) in 3" :key="index">
-							<img src="@/assets/images/add/icon_add_basic.png" alt="">
-						</div>
-                    </div>
-                </div>
+				<div class="long">
+				<div class="left-list" >
+					<span class="name">公司名称</span>
+					<span class="text">街道犄角旮旯办事处</span>
 				</div>
-				<header>
-					<span class="title">其他资料</span>
-				</header>
-				<div class="jbxx">
+				<div class="left-list" >
+					<span class="name">营销品牌</span>
+					<span class="text">街道犄角旮旯办事处</span>
+				</div>
+			</div>
+			   <div class="jbxx">
+				
 					<div class="left">
 						<div class="left-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄</span>
 						</div>
 						<div class="left-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="left-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="left-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道</span>
 						</div>
 					</div>
 					<div class="right">
 						<div class="right-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄角旮旯办事处</span>
 						</div>
 						<div class="right-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="right-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="right-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄角旮旯办事处</span>
 						</div>
 					</div>
 				</div>
 				<div class="long">
 					<div class="left-list" >
-						<span class="name">客户来源</span>
-						<p class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</p>
-					</div>
-					<div class="left-list" >
 						<span class="name">备注</span>
-						<p class="text"></p>
+						<span class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</span>
 					</div>
 				</div>
-				</van-collapse-item>
-			</van-collapse>
-			<van-collapse v-model="activeNames">
-				<van-collapse-item title="调版详情" name="2" :icon=" require('../../assets/images/add/icon_add_db.png')">
-					<section class="dh">
+				<!-- <section class="dh">
 						<header>
 							<span>调版单号</span>
 							<span class="focus">5634375867867866</span>
@@ -109,11 +79,10 @@
 							</div>
 						</div>
 					</section>
-				</van-collapse-item>
-			</van-collapse>
-			<div class="tj">
-				<van-button plain type="info">朴素按钮</van-button>
-			</div>
+			
+			 -->
+			
+			
 			</div>
 		</section>
 	</div>
@@ -173,23 +142,38 @@ import Swiper from 'swiper';
 		border-radius: .12rem .12rem 0px 0px;
 		.main-list{
 			background: #ffffff;
-		}
-		/deep/.van-cell{
-			height: .88rem;
-			line-height: .88rem;
-			font-size: @dbs_size;
-			color: @pt_color;
-			justify-content: space-between;
-			/deep/.van-cell__title{
-				flex: none;
+
+			.text{
+				color: #999;
+				font-size: .22rem;
 			}
-			/deep/.van-cell__right-icon, .van-cell__left-icon{
-				height: .88rem;
-				line-height: .88rem;
-				font-size: .36rem;
+
+			.name{
+				color: #333;
+				font-size: .22rem;
+			}
+
+			.left-list, .right-list{
+				height: 1rem;
+				background: pink;
+			}
+
+			.jbxx{
+			.flex-row;
+			padding:0 .3rem;
+
+			.left, .right{
+				width: 3.29rem
 			}
 			
+			
 		}
+
+		.long{
+			padding: 0 .3rem;
+		}
+		}
+
 
 		header{
 			.title{
@@ -208,29 +192,6 @@ import Swiper from 'swiper';
 				border-radius:.03rem;
 				content: "";
 			}
-		}
-
-		.jbxx{
-			.flex-row;
-			padding:.3rem .3rem 0;
-
-			.left, .right{
-				width: 3.29rem
-			}
-			
-			.left-list, .right-list{
-				height: 1rem;
-				
-			}
-
-			.name{
-				color: #999;
-				font-size: .22rem;
-			}
-		}
-
-		.long{
-			padding: 0 .3rem .3rem;
 		}
 
 		.dh{
@@ -298,21 +259,6 @@ import Swiper from 'swiper';
 						justify-content: space-between;
 					}
 				}
-			}
-		}
-
-		.tj{
-			.flex-row;
-			height: 1.76rem;
-			align-items: center;
-
-			.van-button{
-				color: #fff;
-				width: 2.4rem;
-				background: #1989fa;
-				height: 0.7rem;
-				border-radius: 0.35rem;
-				margin: 0 auto;
 			}
 		}
 	}

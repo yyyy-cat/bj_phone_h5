@@ -37,6 +37,12 @@ export default new Router({
 			  import( "@/pages/zhanhuijilv/DbddBrowser")
 		},
 		{
+			path: "/sharekh",
+			name: "ShareKh",
+			component: () =>
+			  import( "@/pages/zhanhuijilv/ShareKh")
+		},
+		{
 			path: "/dbdetail",
 			name: "dbDetail",
 			component: () =>
