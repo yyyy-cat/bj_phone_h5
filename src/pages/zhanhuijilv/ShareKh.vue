@@ -1,78 +1,48 @@
 <template>
 	<div class="browser">
-		<Nav title="新增展会记录" :showLeft='true'/>
+		<Nav title="分享" :showLeft='true'/>
 		<section>
 			<div class="main-list">
-			<van-collapse v-model="activeNames">
-				<van-collapse-item title="基本信息" name="1" :icon="require('@/assets/images/add/icon_add_basic.png')">
-				<header>
-					<span class="title">名片资料</span>
-				</header>
-				<div class="main">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-						<div class="swiper-slide row" v-for="(item,index) in 3" :key="index">
-							<img src="@/assets/images/add/icon_add_basic.png" alt="">
-						</div>
-                    </div>
-                </div>
+				<div class="title">雕版信息</div>
+			<div class="long">
+				<div class="left-list" >
+					<span class="name">公司名称</span>
+					<span class="text">街道犄角旮旯办事处</span>
 				</div>
-				<header>
-					<span class="title">其他资料</span>
-				</header>
-				<div class="jbxx">
+				<div class="left-list" >
+					<span class="name">营销品牌</span>
+					<span class="text">街道犄角旮旯办事处</span>
+				</div>
+			</div>
+			   <div class="jbxx">
 					<div class="left">
 						<div class="left-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄</span>
 						</div>
 						<div class="left-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="left-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="left-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道</span>
 						</div>
 					</div>
 					<div class="right">
 						<div class="right-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄角旮旯办事处</span>
 						</div>
 						<div class="right-list" >
 							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="right-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
-						</div>
-						<div class="right-list" >
-							<span class="name">客户来源</span>
-							<p class="text">18888888888@163.com</p>
+							<span class="text">街道犄角旮旯办事处</span>
 						</div>
 					</div>
 				</div>
 				<div class="long">
 					<div class="left-list" >
-						<span class="name">客户来源</span>
-						<p class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</p>
-					</div>
-					<div class="left-list" >
 						<span class="name">备注</span>
-						<p class="text"></p>
+						<span class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</span>
 					</div>
 				</div>
-				</van-collapse-item>
-			</van-collapse>
-			<van-collapse v-model="activeNames">
-				<van-collapse-item title="调版详情" name="2" :icon=" require('../../assets/images/add/icon_add_db.png')">
-					<section class="dh">
+				<section class="dh">
 						<header>
 							<span>调版单号</span>
 							<span class="focus">5634375867867866</span>
@@ -97,23 +67,10 @@
 											<p class="tex">广州省 广州市 白云区黑土街道犄角旮旯办事处1234号负一楼仓库</p>
 										</div>
 									</div>
-									<div class="jgbz">
-										<span class="title">价格备注</span>
-										<span class="tex">68.61 / 码</span>
-									</div>
-									<div class="qtbz">
-										<span class="title">其他备注</span>
-										<div class="tex">库存暂无，到货后发货</div>
-									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-				</van-collapse-item>
-			</van-collapse>
-			<div class="tj">
-				<van-button plain type="info">朴素按钮</van-button>
-			</div>
 			</div>
 		</section>
 	</div>
@@ -173,76 +130,60 @@ import Swiper from 'swiper';
 		border-radius: .12rem .12rem 0px 0px;
 		.main-list{
 			background: #ffffff;
-		}
-		/deep/.van-cell{
-			height: .88rem;
-			line-height: .88rem;
-			font-size: @dbs_size;
-			color: @pt_color;
-			justify-content: space-between;
-			/deep/.van-cell__title{
-				flex: none;
-			}
-			/deep/.van-cell__right-icon, .van-cell__left-icon{
-				height: .88rem;
-				line-height: .88rem;
-				font-size: .36rem;
-			}
-			
-		}
 
-		header{
 			.title{
-				position: relative;
-				font-size: .24rem;
-				color: @pt_color;
-				padding-left: .2rem;
+				text-align: center;
+				height: 1rem;
+				line-height: 1rem;
+				color: #333333;
+				font-size: .3rem;
 			}
-			.title:before{
-				position: absolute;
-				 top: .02rem;
-				left: -0.01rem;
-				background-color: #108EE9;
-				width: .06rem;
-				height: .2rem;
-				border-radius:.03rem;
-				content: "";
-			}
-		}
 
-		.jbxx{
+			.text{
+				color: #999;
+				font-size: .22rem;
+			}
+
+			.name{
+				color: #333;
+				font-size: .22rem;
+			}
+
+			.left-list, .right-list{
+				height: 1rem;
+			}
+
+			.jbxx{
 			.flex-row;
-			padding:.3rem .3rem 0;
+			padding:0 .3rem;
 
 			.left, .right{
 				width: 3.29rem
 			}
 			
-			.left-list, .right-list{
-				height: 1rem;
-				
-			}
-
-			.name{
-				color: #999;
-				font-size: .22rem;
-			}
+			
 		}
 
 		.long{
-			padding: 0 .3rem .3rem;
+			padding: 0 .3rem;
 		}
-
+		}
 		.dh{
 			header{
 				.flex-row;
 				justify-content: space-between;
 				padding: .2rem .3rem;
+				font-size: .24rem;
+
+				.focus{
+					color: #0098FF;
+				}
 			}
 			.main-list{
 				width: 6.86rem;
 				margin: 0 auto;
 				.list{
+					height: 3.22rem;
 					margin-bottom: .1rem;
 					.flex-row;
 					align-items: flex-start;
@@ -252,6 +193,7 @@ import Swiper from 'swiper';
 				}
 				.left{
 					padding: 0 .2rem;
+					font-size: 0.24rem;
 					.bb{
 						height: .62rem;
 						line-height: .62rem;
@@ -298,21 +240,6 @@ import Swiper from 'swiper';
 						justify-content: space-between;
 					}
 				}
-			}
-		}
-
-		.tj{
-			.flex-row;
-			height: 1.76rem;
-			align-items: center;
-
-			.van-button{
-				color: #fff;
-				width: 2.4rem;
-				background: #1989fa;
-				height: 0.7rem;
-				border-radius: 0.35rem;
-				margin: 0 auto;
 			}
 		}
 	}
