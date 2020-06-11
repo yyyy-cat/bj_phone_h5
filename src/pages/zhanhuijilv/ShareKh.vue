@@ -3,7 +3,8 @@
 		<Nav title="分享" :showLeft='true'/>
 		<section>
 			<div class="main-list">
-				<div class="long">
+				<div class="title">雕版信息</div>
+			<div class="long">
 				<div class="left-list" >
 					<span class="name">公司名称</span>
 					<span class="text">街道犄角旮旯办事处</span>
@@ -14,7 +15,6 @@
 				</div>
 			</div>
 			   <div class="jbxx">
-				
 					<div class="left">
 						<div class="left-list" >
 							<span class="name">客户来源</span>
@@ -42,7 +42,7 @@
 						<span class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</span>
 					</div>
 				</div>
-				<!-- <section class="dh">
+				<section class="dh">
 						<header>
 							<span>调版单号</span>
 							<span class="focus">5634375867867866</span>
@@ -67,22 +67,10 @@
 											<p class="tex">广州省 广州市 白云区黑土街道犄角旮旯办事处1234号负一楼仓库</p>
 										</div>
 									</div>
-									<div class="jgbz">
-										<span class="title">价格备注</span>
-										<span class="tex">68.61 / 码</span>
-									</div>
-									<div class="qtbz">
-										<span class="title">其他备注</span>
-										<div class="tex">库存暂无，到货后发货</div>
-									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-			
-			 -->
-			
-			
 			</div>
 		</section>
 	</div>
@@ -143,6 +131,14 @@ import Swiper from 'swiper';
 		.main-list{
 			background: #ffffff;
 
+			.title{
+				text-align: center;
+				height: 1rem;
+				line-height: 1rem;
+				color: #333333;
+				font-size: .3rem;
+			}
+
 			.text{
 				color: #999;
 				font-size: .22rem;
@@ -155,7 +151,6 @@ import Swiper from 'swiper';
 
 			.left-list, .right-list{
 				height: 1rem;
-				background: pink;
 			}
 
 			.jbxx{
@@ -173,37 +168,22 @@ import Swiper from 'swiper';
 			padding: 0 .3rem;
 		}
 		}
-
-
-		header{
-			.title{
-				position: relative;
-				font-size: .24rem;
-				color: @pt_color;
-				padding-left: .2rem;
-			}
-			.title:before{
-				position: absolute;
-				 top: .02rem;
-				left: -0.01rem;
-				background-color: #108EE9;
-				width: .06rem;
-				height: .2rem;
-				border-radius:.03rem;
-				content: "";
-			}
-		}
-
 		.dh{
 			header{
 				.flex-row;
 				justify-content: space-between;
 				padding: .2rem .3rem;
+				font-size: .24rem;
+
+				.focus{
+					color: #0098FF;
+				}
 			}
 			.main-list{
 				width: 6.86rem;
 				margin: 0 auto;
 				.list{
+					height: 3.22rem;
 					margin-bottom: .1rem;
 					.flex-row;
 					align-items: flex-start;
@@ -213,6 +193,7 @@ import Swiper from 'swiper';
 				}
 				.left{
 					padding: 0 .2rem;
+					font-size: 0.24rem;
 					.bb{
 						height: .62rem;
 						line-height: .62rem;
