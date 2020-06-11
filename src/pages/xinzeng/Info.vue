@@ -21,7 +21,7 @@
           <input type="text" class="text" v-model="customSource" />
         </div>
         <div class="row">
-          <label for class="name">客户名称</label>
+          <label for class="name hx">客户名称</label>
           <input type="text" class="text" v-model="companyName" />
         </div>
         <div class="row">
@@ -78,8 +78,10 @@
 
 <script>
 import { uploadPic, getPicuuid, addCustom } from "@/api/Add/index";
+import { addPalletteMain} from "@/api/Exhibition/index";
 import Nav from "@/components/common/Nav";
 import Remarks from "@/components/common/Remarks";
+import Global from "@/utils/globalV"
 export default {
   name: "Info",
   components: {
@@ -131,11 +133,18 @@ export default {
       files.append("remark", this.remark);
       files.append("companyName", this.companyName);
       files.append("email", this.email);
+
+      let params = new FormData();
+      params.append("customID", this.customID);
       addCustom(files).then(res => {
         if (res.data.data == true) {
           this.$router.go(-1);
         }
       });
+      addPalletteMain(params).then(res => {
+        Global.set('mdh', res.data.msg)
+        console.log(res,"数据")
+      })
     },
     onRead(e) {
       let files = new FormData();
@@ -207,7 +216,6 @@ body {
             margin-left: 0.2rem;
             width: 1.81rem;
             height: 1.02rem;
-            background: pink;
           }
         }
       }
@@ -218,7 +226,6 @@ body {
         padding-left: 0.32rem;
         font-size: 0.24rem;
         color: #333333;
-        background: pink;
       }
       .top:before {
         position: absolute;
@@ -235,7 +242,7 @@ body {
         margin: 0 0.2rem;
         line-height: 1.2rem;
         height: 1.2rem;
-        border-bottom: 0.01rem solid #999999;
+        border-bottom: 0.01rem solid #E9EDF4;
 
         .name {
           color: #999999;

@@ -73,7 +73,8 @@
 				</footer>
 			</van-popup>
 		</section>
-			<jbAddress/>
+		<!-- 地址 -->
+		<!-- <jbAddress/> -->
 	</div>
 </template>
 
@@ -101,10 +102,9 @@
 			}
 		},
 		mounted() {
-		this.swiper = new Swiper('.swiper-container', {
-				 slidesPerView: 1,
-				 slidesPerColumn: 2,
-		 })
+		   var swiper = new Swiper('.swiper-container', {
+				slidesPerView: 3,
+			});
 		},
 		methods: {
 			toback() {
@@ -118,27 +118,25 @@
 	}
 </script>
 
-<style lang="less">
-html,body{
-	height: 100%;
-}
-</style>
 
 <style scoped lang='less'>
 @import '../../styles/common.less';
  .swiper-container {
-      width: 100%;
-	  height: 100%;
-	  overflow: hidden;
-	  margin-bottom: .4rem;
+    //   width: 1200px;
+      height: 100%;
 	}
-    .swiper-slide {
+	.swiper-wrapper{
+		// display: flex;
+	}
+    /deep/.swiper-slide {
       text-align: center;
-	  background: #fff;
-	  width: 2.4rem !important;
-	  display: inline-block;
-	  margin-right: .1rem;
-
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+	  align-items: center;
+	  width: 2.4rem;
+	  height: 2.4rem;
     }
 
 .dbDetail{
@@ -200,7 +198,7 @@ html,body{
 			width: 2.4rem;
 			height: 2.4rem;
 			// background: #E9EDF4;
-			background: url(../../assets/images/login-img.png) no-repeat;
+			background: url(../../assets/images/cs/img_fabric.png) no-repeat;
 			background-size: 100% 100%;
 			position: relative;
 
@@ -230,10 +228,11 @@ html,body{
 			position: relative;
 			margin: .4rem 0 .4rem .1rem;
 			display: block;
+		    text-indent: .04rem;
 		}
 		.name:before{
 			position: absolute;
-			top: 0;
+			top: 0.04rem;
 			left: -0.05rem;
 			background-color: #108EE9;
 			width: .06rem;

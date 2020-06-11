@@ -262,7 +262,7 @@ export default {
 <style lang="less" scope>
   .theme-one {
     position: fixed;
-    top: 20%;
+    top: 35%;
     bottom: 0;
     right: 0;
     left: 0;

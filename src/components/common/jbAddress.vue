@@ -9,9 +9,13 @@
                         <span class="email">{{item.emails}}</span></div>
                         <div class="address">{{item.address}}</div>
                     </div>
-                    <div class="iconfont icon-xuanzhongyuandian1" ></div>
+                    <div :class="id == idx ? 'iconfont icon-selected': 'iconfont icon-xuanzhongyuandian1'" @click="toSelected(item,idx)" ></div>
 				</div>
             </div>
+            <div class="buttom-name">
+                <ButtonB :toshow='true' name='完成'/>
+            </div>
+            
         </van-popup>
     </div>
 </template>
@@ -19,18 +23,26 @@
 <script>
 import {getAllAddress} from '@/api/Add'
 import Global from '@/utils/global'
+import ButtonB from '@/components/ButtonB'
 export default {
     name: 'jbAddress',
     data() {
         return{
             show: true,
-            addressList: []
+            addressList: [],
+            id: null
         }
+    },
+    components: {
+        ButtonB
     },
     created() {
         this.getAllAddress();
     },
     methods: {
+        toSelected(item, id) {
+            this.id = id
+        },
         getAllAddress() {
             let customID = Global.get('customID');
                 let params = new URLSearchParams();
@@ -46,10 +58,7 @@ export default {
 <style lang="less" scoped>
 @import '../../styles/common.less';
 .jbAddress{
-    
-    .van-popup{
-        padding: 0 .32rem;
-    }
+    position: relative;
     .title{
         text-align: center;
         font-size: .3rem;
@@ -57,6 +66,7 @@ export default {
         margin: .19rem 0 .6rem;
     }
     .list-main{
+         padding: 0 .32rem 1rem;
         .flex-column;
 			.list{
                 height: 1.6rem;
@@ -93,6 +103,21 @@ export default {
                     margin-left: 1.37rem;
                 }
 			}
+    }
+
+    .buttom-name{
+        position: fixed;
+        bottom: 0px;
+        left: 0.32rem;
+        height: 1.2rem;
+        background: #ffffff;
+    }
+
+    .icon-selected{
+        color: #0098FF;
+    }
+    .icon-xuanzhongyuandian1{
+        color: #999999;
     }
 }
 </style>

@@ -61,3 +61,12 @@ export const deleteAddress = function(params) {
         service: 'gy'
     })
 }
+//调版详情
+export const addPalletteDetail = function(params) {
+
+    return Request.post({
+        url: '/api/addPalletteDetail',
+        body: params,
+        service: 'gy'
+    })
+}

@@ -1,0 +1,100 @@
+{
+  "id": "1816449",
+  "name": "bj",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1297609",
+      "name": "35_向下箭头",
+      "font_class": "35_xiangxiajiantou",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "3110240",
+      "name": "选中",
+      "font_class": "xuanzhong",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "6016793",
+      "name": "选中",
+      "font_class": "selected",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7549169",
+      "name": "未选中圆点",
+      "font_class": "xuanzhongyuandian1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "11896293",
+      "name": "眼睛",
+      "font_class": "biyan-copy",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14625589",
+      "name": "扫一扫",
+      "font_class": "saoyisao",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "837923",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e944",
+      "unicode_decimal": 59716
+    },
+    {
+      "icon_id": "1293316",
+      "name": "相机",
+      "font_class": "xiangji",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "2808271",
+      "name": "向右箭头",
+      "font_class": "arrowright",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "8676290",
+      "name": "垃圾桶",
+      "font_class": "lajitong",
+      "unicode": "e6d3",
+      "unicode_decimal": 59091
+    },
+    {
+      "icon_id": "7226607",
+      "name": "向左箭头",
+      "font_class": "xiangzuojiantou",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "9572493",
+      "name": "锁",
+      "font_class": "IOTtubiao_huabanfuben",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "9606873",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

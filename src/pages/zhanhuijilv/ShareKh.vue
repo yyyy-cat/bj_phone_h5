@@ -3,7 +3,7 @@
 		<Nav title="分享" :showLeft='true'/>
 		<section>
 			<div class="main-list">
-				<div class="title">雕版信息</div>
+				<div class="dbtitle">雕版信息</div>
 			<div class="long">
 				<div class="left-list" >
 					<span class="name">公司名称</span>
@@ -39,7 +39,7 @@
 				<div class="long">
 					<div class="left-list" >
 						<span class="name">备注</span>
-						<span class="text">高尚18888888888中国广州省广州市白云区黑土街道犄角旮旯办事处</span>
+						<span class="text">市白云区黑土街道犄角旮旯办事处</span>
 					</div>
 				</div>
 				<section class="dh">
@@ -64,7 +64,7 @@
 										<div class="title">寄板地址</div>
 										<div class="dz">
 											<p class="tex">Lisa 17777777777</p>
-											<p class="tex">广州省 广州市 白云区黑土街道犄角旮旯办事处1234号负一楼仓库</p>
+											<p class="tex">广州省 广州市 白云区黑土街道犄角</p>
 										</div>
 									</div>
 								</div>
@@ -131,7 +131,7 @@ import Swiper from 'swiper';
 		.main-list{
 			background: #ffffff;
 
-			.title{
+			.dbtitle{
 				text-align: center;
 				height: 1rem;
 				line-height: 1rem;
@@ -150,7 +150,7 @@ import Swiper from 'swiper';
 			}
 
 			.left-list, .right-list{
-				height: 1rem;
+				height: 0.8rem;
 			}
 
 			.jbxx{
@@ -229,6 +229,7 @@ import Swiper from 'swiper';
 					.title{
 						color: @pt_color;
 						font-size: @fl_small_size;
+						line-height: .4rem;
 						
 					}
 					.tex{

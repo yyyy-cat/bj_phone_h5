@@ -41,6 +41,7 @@
 <script>
 import Nav from '@/components/common/Nav'
 import Swiper from 'swiper';
+import { getWeiTiJiaoRecord} from "@/api/Exhibition/index";
 export default {
     name: 'ERecord',
     components: {
@@ -53,6 +54,9 @@ export default {
             swiper: null
         }
     },
+    created() {
+        // this.getWeiTiJiaoRecord();
+    },
     mounted() {
         this.swiper = new Swiper('.swiper-container', {
 				 slidesPerView: 1,
@@ -60,6 +64,12 @@ export default {
 		 })
     },
     methods: {
+        getWeiTiJiaoRecord() {
+            getWeiTiJiaoRecord().then(res => {
+               console.log(res,"返回来的数据啊")
+            });
+        },
+      
         toAdd() {
            this.$router.push('/add')
         }
