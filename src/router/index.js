@@ -80,11 +80,26 @@ export default new Router({
 			component: () =>
 			  import( "@/pages/bfjl")
 		},
+		// 产品信息
 		{
 			path: "/cpxx",
 			name: "cpxx",
 			component: () =>
-			  import( "@/pages/product/cpxx")
+			  import( "@/pages/product/cphz/cpxx")
+		},
+		// 产品信息内的产品详情
+		{
+			path: "/cpDetail",
+			name: "cpDetail",
+			component: () =>
+			  import( "@/pages/product/cphz/cpDetail")
+		},
+		// 寄版跟踪
+		{
+			path: "/jbgz",
+			name: "jbgz",
+			component: () =>
+			  import( "@/pages/jbgz/jbgz")
 		},
 	]
 })

@@ -1,12 +1,9 @@
 <template>
-  <div class="records">
-    <Nav title="展会纪录" rightText="新增" :showLeft="true" :backPage="toAdd" />
+  <div class="jbgz_wrap">
+    <Nav title="业务调度" :showLeft="true" />
     <section>
-      <div class="main-s">
-        <div class="search">
-          <span class="iconfont icon-sousuo"></span>
-          <span>搜索</span>
-        </div>
+      <div>
+        <van-search v-model="value" placeholder="搜索" shape="round" />
       </div>
       <div class="change-main">
         <span>待提交</span>
@@ -41,76 +38,34 @@
 <script>
 import Nav from "@/components/common/Nav";
 import Swiper from "swiper";
+
 export default {
-  name: "ERecord",
+  name: "jbgz",
   components: {
     Nav
   },
   data() {
     return {
-      value: "我的搜索框",
-      active: 1,
-      swiper: null
+      value: ""
     };
   },
+  methods: {},
   mounted() {
     this.swiper = new Swiper(".swiper-container", {
       slidesPerView: 1,
       slidesPerColumn: 2
     });
-  },
-  methods: {
-    toAdd() {
-      this.$router.push("/add");
-    }
   }
 };
 </script>
-<style lang="less">
-html,
-body {
-  height: 100%;
-}
-</style>
 
 <style lang="less" scoped>
 @import "../../styles/common.less";
 
-.swiper-container {
-  width: 6rem;
-  overflow: hidden;
-  margin-bottom: 0.4rem;
-}
-.swiper-slide {
-  text-align: center;
-  background: #fff;
-  width: 1.48rem !important;
-  display: inline-block;
-  margin-right: 0.1rem;
-}
-.records {
+.jbgz_wrap {
   height: 100%;
   background: @bg_h;
   section {
-    .main-s {
-      padding: 0.15rem 0;
-      width: 7.18rem;
-      margin: 0 auto;
-    }
-    .search {
-      height: 0.6rem;
-      background: rgba(255, 255, 255, 1);
-      border-radius: 0.3rem;
-      color: rgba(0, 56, 86, 1);
-      font-size: @fl_size;
-      text-align: center;
-      line-height: 0.6rem;
-
-      .iconfont {
-        font-size: 0.26rem;
-      }
-    }
-
     .change-main {
       text-align: center;
       height: 0.7rem;
@@ -122,7 +77,6 @@ body {
         padding: 0.45rem;
       }
     }
-
     .content {
       margin: 0.1rem auto;
       width: 7.18rem;
@@ -131,7 +85,6 @@ body {
       border-radius: 0.16rem;
       .flex-column;
       padding: 0 0.16rem;
-
       .top {
         .flex-row;
         justify-content: space-between;
@@ -147,7 +100,6 @@ body {
           border-radius: 50%;
         }
       }
-
       .main {
         .flex-row;
         .left {
@@ -199,5 +151,18 @@ body {
       }
     }
   }
+}
+
+.swiper-container {
+  width: 6rem;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+  width: 1.48rem !important;
+  display: inline-block;
+  margin-right: 0.1rem;
 }
 </style>

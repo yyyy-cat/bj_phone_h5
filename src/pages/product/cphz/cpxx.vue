@@ -14,9 +14,10 @@
     </div>
     <div class="box">
       <ul class="content_main">
-        <li class="content" v-for="(data,index) in 9" :key="index" @click="detailClick">
+        <li class="content" v-for="(data,index) in 29" :key="index" @click="detailClick">
           <span class="con_top">
-            <img src="@/assets/images/product/cpt.jpg" alt class="cpt" />
+            <!-- <img src="@/assets/images/product/cpt.jpg" alt class="cpt" /> -->
+            <img v-for="(img,index) in imageList" v-lazy="img" :key="index" alt class="cpt">
           </span>
           <div class="con_bottom">
             <h2 class="cloth">
@@ -107,41 +108,59 @@
         </div>
       </div>
       <div class="button_two">
-        <van-button round class="reset">重置</van-button>
-        <van-button round class="screen">筛选</van-button>
+        <van-button round class="reset" @click="resetClick">重置</van-button>
+        <van-button round class="screen" @click="screenClick">筛选</van-button>
       </div>
     </van-popup>
   </div>
 </template>
 
 <script>
+import { Toast } from 'vant';
+
+
 export default {
   name: "cpxx",
   data() {
     return {
-      value1: "",
+      value1: "面料",
       value2: "",
       show: false,
       option: [
         { text: "面料", value: "面料" },
         { text: "款号", value: "款号" }
+      ],
+      imageList: [
+        'https://img.yzcdn.cn/vant/apple-1.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg'
       ]
     };
   },
-  components: {},
+  components: {
+      Toast,
+  },
   methods: {
+    // 退回
     tuihou() {
       this.$router.go(-1);
     },
-    onConfirm() {
-      this.$refs.item.toggle();
-    },
+    // 点击查看产品详情
     detailClick() {
-      console.log("detail");
+      this.$router.push('/cpDetail')
     },
+    // 弹窗
     showPopup() {
       this.show = true;
-    }
+    },
+    // 重置
+    resetClick(){
+        // console.log("重置")
+        Toast('重置');
+    },
+    // 筛选
+    screenClick(){
+        console.log("筛选")
+    },
   },
   created() {},
   mounted() {}
@@ -151,15 +170,15 @@ export default {
 <style lang="less" scoped>
 .header {
   width: 100%;
-  background: #ccc;
+  background: #fff;
   height: 0.88rem;
   line-height: 0.88rem;
   display: flex;
   justify-content: space-between;
   position: fixed;
   .iconfont {
-    width: 36px;
-    height: 32px;
+    width: .36rem;
+    height: .32rem;
     margin-left: 0.2rem;
   }
   .middle {

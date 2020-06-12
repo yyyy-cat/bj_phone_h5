@@ -24,9 +24,9 @@ export default class Varible {
                     route: '/jbjl',
                 },
                 {
-                    name: '问题中心',
+                    name: '寄版跟踪',
                     icon: require('@/assets/images/select/icon_sort_question.png'),
-                    route: '/wtzx',
+                    route: '/jbgz',
                 },
             ]
         },
@@ -34,36 +34,31 @@ export default class Varible {
             text: '产品信息',
             content: [
                 {
-                    name: '产品信息',
+                    name: '产品汇总',
                     icon: require('@/assets/images/select/icon_sort_product.png'),
                     route: '/cpxx',
                 },
-                {
-                    name: '面料信息',
-                    icon: require('@/assets/images/select/icon_sort_fabric.png'),
-                    route: '/mlxx',
-                },
-                {
-                    name: '面料测试数据',
-                    icon: require('@/assets/images/select/icon_sort_test.png'),
-                    route: '/mlcssj',
-                },
-                {
-                    name: '仓库数据',
-                    icon: require('@/assets/images/select/icon_sort_send.png'),
-                    route: '/cksj',
-                }
+                // {
+                //     name: '面料测试数据',
+                //     icon: require('@/assets/images/select/icon_sort_test.png'),
+                //     route: '/mlcssj',
+                // },
+                // {
+                //     name: '仓库数据',
+                //     icon: require('@/assets/images/select/icon_sort_send.png'),
+                //     route: '/cksj',
+                // }
             ]
         },
-        {
-            text: '销售数据',
-            content: [
-                {
-                    name: '销售数据',
-                    icon: require('@/assets/images/select/icon_sort_sale.png'),
-                    route: '/xssj',
-                }
-            ]
-        }
+        // {
+        //     text: '销售数据',
+        //     content: [
+        //         {
+        //             name: '销售数据',
+        //             icon: require('@/assets/images/select/icon_sort_sale.png'),
+        //             route: '/xssj',
+        //         }
+        //     ]
+        // }
     ]
 }
